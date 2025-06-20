@@ -24,7 +24,9 @@ git clone https://github.com/0xSouravXBT/resume-analyzer.git
 cd resume-analyzer
 pip install -r requirements.txt
 
-# ▶️ Usage
+### **▶️ Usage**
+**Run:**
 
 python app.py
+
 
