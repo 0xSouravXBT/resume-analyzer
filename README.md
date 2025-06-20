@@ -17,5 +17,10 @@ It parses and analyzes resumes to identify key sections like name, email, skills
 - PyPDF2 (for PDF parsing)
 - HTML (with Jinja templates)
 
-## 📂 Project Structure
+## 🚀 Installation
+
+```bash
+git clone https://github.com/0xSouravXBT/resume-analyzer.git
+cd resume-analyzer
+pip install -r requirements.txt
 
