@@ -24,3 +24,10 @@ git clone https://github.com/0xSouravXBT/resume-analyzer.git
 cd resume-analyzer
 pip install -r requirements.txt
 
+# ▶️ Usage
+
+python app.py
+
+Then open your browser and go to:
+
+http://localhost:5000
