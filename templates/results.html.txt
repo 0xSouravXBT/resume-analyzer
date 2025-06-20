@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Analyzer</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        h1 { color: #2c3e50; }
+        form { margin-bottom: 30px; }
+        .result { background-color: #f4f4f4; padding: 20px; border-radius: 10px; }
+        .tips { margin-top: 15px; color: #c0392b; }
+    </style>
+</head>
+<body>
+    <h1>📄 Resume Analyzer</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <label><strong>Upload your resume (PDF, DOCX, or image):</strong></label><br><br>
+        <input type="file" name="resume" required>
+        <br><br>
+        <input type="submit" value="Analyze Resume">
+    </form>
+
+    {% if filename %}
+    <div class="result">
+        <h3>📄 Uploaded File:</h3>
+        <p>{{ filename }}</p>
+
+        {% if analysis %}
+            <h3>🔍 Resume Analysis:</h3>
+            <p><strong>Word Count:</strong> {{ analysis.word_count }}</p>
+            <p><strong>Resume Level:</strong> {{ analysis.level }}</p>
+            <p><strong>Detected Skills:</strong> {{ analysis.detected_skills | join(', ') if analysis.detected_skills else 'None detected' }}</p>
+            <p><strong>Recommended Skills:</strong> {{ recommended_skills | join(', ') }}</p>
+            <p><strong>Resume Score:</strong> {{ analysis.score }} / 100</p>
+
+            <div class="tips">
+                <h4>Tips to Improve:</h4>
+                <ul>
+                    {% if analysis.word_count < 300 %}
+                        <li>Your resume seems short. Try expanding on your experience and skills.</li>
+                    {% endif %}
+                    {% if analysis.score < 70 %}
+                        <li>Add more relevant technical and soft skills to match industry expectations.</li>
+                    {% endif %}
+                </ul>
+            </div>
+        {% endif %}
+
+        <h3>📘 Extracted Text:</h3>
+        <pre>{{ extracted_text }}</pre>
+    </div>
+    {% endif %}
+</body>
+</html>

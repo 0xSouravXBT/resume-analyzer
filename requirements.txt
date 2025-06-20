@@ -1,3 +1,14 @@
-flask
-spacy
-scikit-learn
+# 📄 Resume Analyzer
+
+A web application to analyze resumes and extract insights like skill matching, word count, and overall resume score using OCR and NLP techniques.
+
+## 🔧 Features
+- Upload PDF, DOCX, or image resumes
+- Extract text using Tesseract OCR
+- Match skills against a recommended list
+- Score resumes based on relevance
+
+## 🚀 How to Run
+```bash
+pip install -r requirements.txt
+python app.py
